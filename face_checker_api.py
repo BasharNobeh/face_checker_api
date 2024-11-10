@@ -17,8 +17,8 @@ reference_image_path = r"bashar.jpg"
 reference_image = cv2.imread(reference_image_path)
 
 if reference_image is None:
-    raise FileNotFoundError(f"Reference image not found: {
-                            reference_image_path}")
+    raise FileNotFoundError(
+        f"Reference image not found: {reference_image_path}")
 
 # Perform face recognition on the reference image
 faces1 = app_face.get(reference_image)
@@ -81,4 +81,4 @@ def compare_faces():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=8080)
